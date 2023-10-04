@@ -48,8 +48,8 @@ export default {
     modulePaths: ['<rootdir>src'],
     moduleNameMapper: {
         '^.+\\.(css|less|scss)$': 'babel-jest',
-        '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': 
-            '<rootDir>config/jest/mock.ts',
+        // eslint-disable-next-line max-len
+        '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>config/jest/mock.ts',
     },
 
     // Indicates whether the coverage information should be collected while executing the test

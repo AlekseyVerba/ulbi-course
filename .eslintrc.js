@@ -41,7 +41,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 1,
         'no-underscore-dangle': 'off',
         'import/no-extraneous-dependencies': 1,
-        'max-len': [2, { ignoreComments: true }],
+        'max-len': [2, { ignoreComments: true, code: 100 }],
         'react/destructuring-assignment': 'off',
         'padded-blocks': 'off',
         indent: [2, 4],
