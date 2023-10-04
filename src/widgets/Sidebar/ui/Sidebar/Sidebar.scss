@@ -16,4 +16,49 @@
         bottom: 20px;
         width: 100%;
     }
+
+    .Sidebar__button {
+        position: absolute;
+        bottom: 40px;
+        right: -40px;
+    }
+
+    .Sidebar__bottom-language {
+        margin-left: 10px;
+    }
+
+    .Sidebar__routes {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+    .Sidebar__link {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .Sidebar__icon {
+        fill: var(--inverted-color);
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    &.Sidebar--collapsed {
+        .Sidebar__bottom {
+            flex-direction: column;
+        }
+
+        .Sidebar__bottom-language {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        .Sidebar__link-text {
+            opacity: 0;
+            width: 0;
+        }
+    }
 }

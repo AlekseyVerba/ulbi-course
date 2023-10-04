@@ -1,7 +1,13 @@
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonThemeEnum } from 'shared/ui/Button';
 
-export const LanguageToggle = () => {
+interface LanguageToggleProps {
+    className?: string
+}
+
+export const LanguageToggle: FC<LanguageToggleProps> = ({ className }) => {
     const { t, i18n } = useTranslation()
 
     const changeLanguage = () => {
@@ -9,7 +15,11 @@ export const LanguageToggle = () => {
     }
 
     return (
-        <Button onClick={changeLanguage} theme={ButtonThemeEnum.CLEAR}>
+        <Button
+            className={classNames(className)}
+            onClick={changeLanguage}
+            theme={ButtonThemeEnum.INVERTED_BACKGROUND}
+        >
             {t('Язык')}
         </Button>
     )

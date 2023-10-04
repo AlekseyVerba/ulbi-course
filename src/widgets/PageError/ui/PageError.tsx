@@ -16,7 +16,7 @@ export const PageError = () => {
             {t('Произошла неожиданная ошибка')}
             <br />
             <div>
-                <Button onClick={updatePage} theme={ButtonThemeEnum.FULL}>
+                <Button onClick={updatePage}>
                     {t('Обновить страницу')}
                 </Button>
             </div>

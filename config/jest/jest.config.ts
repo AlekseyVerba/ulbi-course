@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -49,7 +51,8 @@ export default {
     moduleNameMapper: {
         '^.+\\.(css|less|scss)$': 'babel-jest',
         // eslint-disable-next-line max-len
-        '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>config/jest/mock.ts',
+        '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>config/jest/mock.ts',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
     // Indicates whether the coverage information should be collected while executing the test
