@@ -1,0 +1,52 @@
+module.exports = {
+    env: {
+        browser: true,
+        es2021: true,
+        jest: true,
+    },
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+    ],
+    rules: {
+        'i18next/no-literal-string': [1, { markupOnly: true }],
+        'import/no-unresolved': 'off',
+        semi: 'off',
+        'react/require-default-props': 'off',
+        'import/prefer-default-export': 'off',
+        'react/function-component-definition': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-filename-extension': [2,
+            { extensions: ['.js', '.jsx', '.tsx'] },
+        ],
+        'react/jsx-indent': [2, 4],
+        'react/jsx-indent-props': [2, 4],
+        'import/extensions': 'off',
+        'no-shadow': 'off',
+        'no-unused-vars': 1,
+        'react/jsx-props-no-spreading': 1,
+        'no-underscore-dangle': 'off',
+        'import/no-extraneous-dependencies': 1,
+        'max-len': [2, { ignoreComments: true }],
+        'react/destructuring-assignment': 'off',
+        'padded-blocks': 'off',
+        indent: [2, 4],
+    },
+    globals: {
+        __IS_DEV__: true,
+    },
+};
