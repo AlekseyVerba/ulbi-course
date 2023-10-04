@@ -1,0 +1,44 @@
+# Name your workflow
+name: CI
+
+# Set on which events you want run the actions.
+# In this case the workflow will run on push for master and on pull request for master and develop branches
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  # This workflow contains a job called "integration"
+  integration:
+		# A strategy that defines different variations of an environment to run each job in.
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [18]
+    # The runners that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Checkout master branch
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build prod project
+        run: npm run build:production
+
+      - name: Run ESLint
+        run: npm run lint:ts
+
+      - name: Run ESLint SCSS
+        run: npm run lint:scss
+
+      - name: Run unit tests
+        run: npm run test
